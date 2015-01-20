@@ -66,7 +66,7 @@ public class StorageSahiLoginLogoutTasks {
 	 * @return
 	 */
 	private ElementStub getDomainField() {
-		return browser.select("LoginFormView_domain");
+		return browser.select("LoginFormView_profile");
 	}
 
 	/**
