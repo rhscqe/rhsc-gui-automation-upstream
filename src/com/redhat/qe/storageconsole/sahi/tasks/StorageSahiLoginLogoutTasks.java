@@ -26,7 +26,7 @@ public class StorageSahiLoginLogoutTasks {
 	public boolean loginOrRelogin(String userName, String password, String loginDomain) {
 		
 		logout(); // Do logout if already logged-in 
-		if(!browser.waitForElementExists(browser, browser.textbox("LoginPopupView_userName"), "LoginPopupView_userName", 1000*180)){
+		if(!browser.waitForElementExists(browser, browser.textbox("LoginFormView_userName"), "LoginiFormView_userName", 1000*180)){
 			return false;
 		}
 		login(userName, password, loginDomain);
@@ -59,28 +59,28 @@ public class StorageSahiLoginLogoutTasks {
 	 * @return
 	 */
 	private ElementStub getLoginButton() {
-		return browser.div("LoginPopupView_loginButton");
+		return browser.div("LoginFormView_loginButton");
 	}
 
 	/**
 	 * @return
 	 */
 	private ElementStub getDomainField() {
-		return browser.select("LoginPopupView_domain");
+		return browser.select("LoginFormView_domain");
 	}
 
 	/**
 	 * @return
 	 */
 	private ElementStub getPasswordField() {
-		return browser.password("LoginPopupView_password");
+		return browser.password("LoginFormView_password");
 	}
 
 	/**
 	 * @return
 	 */
 	private ElementStub getUserNameField() {
-		return browser.textbox("LoginPopupView_userName");
+		return browser.textbox("LoginFormView_userName");
 	}
 	
 	public boolean loginIfLoggedOut(String userName, String password, String loginDomain){
@@ -101,7 +101,9 @@ public class StorageSahiLoginLogoutTasks {
 	 * Logout action
 	 */
 	public boolean logout() {
-		if(browser.waitForElementExists(browser, browser.link("Sign Out"), "Link: Sign Out", 1000*3)){
+        if(browser.waitForElementExists(browser, browser.link("admin"), "Link: admin", 1000*3)){
+            browser.link("admin").click();
+        if(browser.waitForElementExists(browser, browser.link("Sign Out"), "Link: Sign Out", 1000*3)){
 			browser.link("Sign Out").click();
 			return true;
 		} 

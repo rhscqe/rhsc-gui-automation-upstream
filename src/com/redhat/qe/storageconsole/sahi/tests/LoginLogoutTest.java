@@ -36,8 +36,8 @@ public class LoginLogoutTest extends SahiTestBase{
 		Assert.assertTrue(tasks.loginOrRelogin(credentials.getUsername(), credentials.getPassword(), credentials.getDomain()), "Login status");
 		String loginErrorMessgae = "Login failed. Please verify your login information or contact the system administrator.";
 		Assert.assertFalse(browser.div(loginErrorMessgae).exists(), "Login error message["+loginErrorMessgae+"] available?: "+browser.div(loginErrorMessgae).exists());
-		Assert.assertFalse(browser.textbox("LoginPopupView_userName").exists(), "Login user TextBox available?: "+browser.textbox("user").exists());
-		Assert.assertFalse(browser.password("LoginPopupView_password").exists(), "Login user password field available?: "+browser.password("password").exists());
+		Assert.assertFalse(browser.textbox("LoginFormView_userName").exists(), "Login user TextBox available?: "+browser.textbox("user").exists());
+		Assert.assertFalse(browser.password("LoginFormView_password").exists(), "Login user password field available?: "+browser.password("password").exists());
 		Assert.assertTrue(browser.div("/" + "Logged in user: " + credentials.getUsername() + "/").exists(), "Username not found!");
 		Assert.assertTrue(browser.div("/" + "Sign Out" + "/").exists());
 	}
@@ -46,16 +46,16 @@ public class LoginLogoutTest extends SahiTestBase{
 	public void logoutTest(){
 		_logger.finer("Logging out from RHSC GUI");
 		tasks.logout();
-		Assert.assertTrue(browser.textbox("LoginPopupView_userName").exists(), "Login user TextBox available?: "+browser.textbox("LoginPopupView_userName").exists());
-		Assert.assertTrue(browser.password("LoginPopupView_password").exists(), "Login user password field available?: "+browser.password("LoginPopupView_password").exists());
-		Assert.assertTrue(browser.div("LoginPopupView_loginButton").exists(), "Login button available?: "+browser.cell("LoginPopupView_loginButton").exists());
+		Assert.assertTrue(browser.textbox("LoginFormView_userName").exists(), "Login user TextBox available?: "+browser.textbox("LoginFormView_userName").exists());
+		Assert.assertTrue(browser.password("LoginFormView_password").exists(), "Login user password field available?: "+browser.password("LoginFormView_password").exists());
+		Assert.assertTrue(browser.div("LoginFormView_loginButton").exists(), "Login button available?: "+browser.cell("LoginFormView_loginButton").exists());
 	}
 	
 	@Test
 	public void loginWithInvalidUsername(){	
 		_logger.finer("Failed Login into RHSC GUI");
-		Assert.assertTrue(tasks.loginOrRelogin("invalidusername", "redhat", "internal"), "Login user TextBox available?: "+browser.textbox("LoginPopupView_userName").exists());
-		Assert.assertTrue(browser.textbox("LoginPopupView_userName").exists(), "Login user TextBox available?: "+browser.textbox("LoginPopupView_userName").exists());
+		Assert.assertTrue(tasks.loginOrRelogin("invalidusername", "redhat", "internal"), "Login user TextBox available?: "+browser.textbox("LoginFormView_userName").exists());
+		Assert.assertTrue(browser.textbox("LoginFormView_userName").exists(), "Login user TextBox available?: "+browser.textbox("LoginFormView_userName").exists());
 		String loginErrorMessgae = "Login failed. Please verify your login information or contact the system administrator.";
 		Assert.assertTrue(browser.div(loginErrorMessgae).exists(), "Login error message["+loginErrorMessgae+"] available?: "+browser.div(loginErrorMessgae).exists());
 	}

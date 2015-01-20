@@ -48,7 +48,7 @@ public class ClusterTest extends SahiTestBase{
 	@Test (dataProvider="clusterCreationData")
 	public void checkRelevantHosts(ClusterMap cluster){
 		Assert.assertTrue(tasks.checkRelevantHosts(cluster), "Status of hosts in Cluster["+cluster.getClusterName()+"]!");
-	}	
+	}		
 	
 	@Test (dataProvider="clusterCreationData")
 	public void deleteCluster(ClusterMap cluster){
