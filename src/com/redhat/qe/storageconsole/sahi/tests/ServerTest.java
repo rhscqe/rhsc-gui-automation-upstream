@@ -28,7 +28,7 @@ import com.redhat.qe.storageconsole.te.TestEnvironmentConfigException;
  * Aug 10, 2012
  */
 public class ServerTest extends SahiTestBase{
-	private final String EVENT_MSG_SERVER_ADDED = "State was set to Up for host .*..";
+	private final String EVENT_MSG_SERVER_ADDED = "Status of host .*. was set to Up.";
 	private final String EVENT_MSG_SERVER_REMOVED = "Host .*. was removed by";
 	private final String EVENT_MSG_SERVER_RENAMED = "Host server23 was renamed from .*. to ";
 	private final String EVENT_MSG_SERVER_MOVED_TO_MAINTENANCE = "Host .*. was switched to Maintenance mode by";
