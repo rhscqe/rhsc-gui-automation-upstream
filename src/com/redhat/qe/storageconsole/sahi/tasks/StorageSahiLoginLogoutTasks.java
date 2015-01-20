@@ -103,6 +103,7 @@ public class StorageSahiLoginLogoutTasks {
 	public boolean logout() {
         if(browser.waitForElementExists(browser, browser.link("admin"), "Link: admin", 1000*3)){
             browser.link("admin").click();
+        }
         if(browser.waitForElementExists(browser, browser.link("Sign Out"), "Link: Sign Out", 1000*3)){
 			browser.link("Sign Out").click();
 			return true;
