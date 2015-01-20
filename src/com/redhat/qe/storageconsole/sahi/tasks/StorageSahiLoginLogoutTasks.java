@@ -59,7 +59,7 @@ public class StorageSahiLoginLogoutTasks {
 	 * @return
 	 */
 	private ElementStub getLoginButton() {
-		return browser.div("LoginFormView_loginButton");
+		return browser.button("LoginFormView_loginButton");
 	}
 
 	/**
