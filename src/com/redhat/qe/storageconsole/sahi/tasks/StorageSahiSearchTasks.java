@@ -210,6 +210,6 @@ public class StorageSahiSearchTasks {
 		storageSahiTasks._logger.log(Level.INFO, String.format("search string [%s].", searchString));
 		storageSahiTasks.textbox(searchBox).setValue(searchString);
 		Assert.assertEquals(storageSahiTasks.textbox(searchBox).getValue(),searchString,"search query text field contents");
-		storageSahiTasks.image(searchButton).click();
+		storageSahiTasks.div(searchButton).click();
 	}
 }

@@ -37,10 +37,10 @@ public class VolumeTest extends SahiTestBase {
 	private final String EVENT_MSG_VOLUME_REMOVED = "Gluster Volume .*. deleted";
 	private final String EVENT_MSG_VOLUME_BRICKS_REMOVED = "Bricks removed from Gluster Volume .*.";
 	private final String EVENT_MSG_VOLUME_ADD_OPTION = "Volume Option .*. set on ";
-	private final String EVENT_MSG_VOLUME_EDIT_OPTION = "Volume Option .*. set on ";
+	private final String EVENT_MSG_VOLUME_EDIT_OPTION = "Volume Option .*. changed to ";
 	private final String EVENT_MSG_VOLUME_OPTION_CHANGED = "changed to .*. from";
 	private final String EVENT_MSG_VOLUME_RESET_ALL_OPTIONS = "All Volume Options reset on .*.";
-	private final String EVENT_MSG_VOLUME_RESET_OPTION = "Volume Option .*.=.*. reset on .*.";
+	private final String EVENT_MSG_VOLUME_RESET_OPTION = "Volume Option .*. reset on vol";
 	private final String EVENT_MSG_VOLUME_BRICKS_ADDED = ".*brick\\(s\\) added to volume .*.";
 	
 	StorageSahiVolumeTasks tasks = null;
@@ -175,10 +175,9 @@ public class VolumeTest extends SahiTestBase {
 	// Edit Volume Options
 	public void editVolumeOption(VolumeMap volumeMap) throws IOException, TestEnvironmentConfigException, JAXBException {
 		Assert.assertTrue(tasks.editVolumeOption(volumeMap), "Volume["+volumeMap.getVolumeName()+"] Edit Volume Option!");
-		String expectedMessage = EVENT_MSG_VOLUME_EDIT_OPTION.replace(".*.",volumeMap.getVolumeOptionKey() + "=" + volumeMap.getVolumeOptionValue());
-		Assert.assertTrue(storageSahiMessageTasks.validateLogMessage(expectedMessage + volumeMap.getVolumeName()));
-		expectedMessage = EVENT_MSG_VOLUME_OPTION_CHANGED.replace(".*.",volumeMap.getVolumeEditOptionValue());
-		Assert.assertTrue(storageSahiMessageTasks.validateLogMessage(expectedMessage));
+		/*String expectedMessage = EVENT_MSG_VOLUME_EDIT_OPTION.replace(".*.",volumeMap.getVolumeOptionKey() + "=" + volumeMap.getVolumeOptionValue());*/
+		String expectedMessage = EVENT_MSG_VOLUME_EDIT_OPTION.replace(".*.", volumeMap.getVolumeOptionKey());
+		Assert.assertTrue(storageSahiMessageTasks.validateLogMessage(expectedMessage + volumeMap.getVolumeEditOptionValue() + " from" + volumeMap.getVolumeOptionValue() + " on" + volumeMap.getVolumeName()));
 	}
 	
 	@Test (dataProvider="volumeCreationData")
@@ -195,7 +194,8 @@ public class VolumeTest extends SahiTestBase {
 	// Reset Volume Options
 	public void resetVolumeOption(VolumeMap volumeMap) throws IOException, TestEnvironmentConfigException, JAXBException {
 		Assert.assertTrue(tasks.resetVolumeOption(volumeMap), "Volume["+volumeMap.getVolumeName()+"] Reset Volume Option!");
-		Assert.assertTrue(storageSahiMessageTasks.validateLogMessage(EVENT_MSG_VOLUME_RESET_OPTION));
+		String expectedMessage = EVENT_MSG_VOLUME_RESET_OPTION.replace(".*.",volumeMap.getVolumeOptionKey() + "=" + volumeMap.getVolumeOptionValue());
+		Assert.assertTrue(storageSahiMessageTasks.validateLogMessage(expectedMessage + volumeMap.getVolumeName()));
 	}
 	
 	@Test (dataProvider="volumeCreationData")
@@ -287,7 +287,7 @@ public class VolumeTest extends SahiTestBase {
 		volumeMap.setVolumeEditOptionValue("CRITICAL");
 		authAllowTestValue = TestEnvironmentConfig.getTestEnvironemt().getGeneralKeyValueMapFromKey("COMMA_SEPARATED_IP").getValue();
 		volumeMap.setVolumeAuthAllowValue(authAllowTestValue);
-		volumeMap.setVolumeIsTechPreview(true);
+		/*volumeMap.setVolumeIsTechPreview(true);*/
 		data.add(volumeMap);
 		volumeMap = new VolumeMap();			
 		
@@ -304,7 +304,7 @@ public class VolumeTest extends SahiTestBase {
 		volumeMap.setVolumeEditOptionValue("20480");
 		authAllowTestValue = TestEnvironmentConfig.getTestEnvironemt().getGeneralKeyValueMapFromKey("SINGLE_HOSTNAME").getValue();
 		volumeMap.setVolumeAuthAllowValue(authAllowTestValue);
-		volumeMap.setVolumeIsTechPreview(true);
+		/*volumeMap.setVolumeIsTechPreview(true);*/
 		data.add(volumeMap);
 		volumeMap = new VolumeMap();
 		
@@ -321,7 +321,7 @@ public class VolumeTest extends SahiTestBase {
 		volumeMap.setVolumeEditOptionValue("off");
 		authAllowTestValue = TestEnvironmentConfig.getTestEnvironemt().getGeneralKeyValueMapFromKey("ALLOW_ALL").getValue();
 		volumeMap.setVolumeAuthAllowValue(authAllowTestValue);
-		volumeMap.setVolumeIsTechPreview(true);
+		/*volumeMap.setVolumeIsTechPreview(true);*/
 		data.add(volumeMap);
 		volumeMap = new VolumeMap();
 		
@@ -338,7 +338,7 @@ public class VolumeTest extends SahiTestBase {
 		volumeMap.setVolumeEditOptionValue("on");
 		authAllowTestValue = TestEnvironmentConfig.getTestEnvironemt().getGeneralKeyValueMapFromKey("COMMA_SEPARATED_HOSTNAMES").getValue();
 		volumeMap.setVolumeAuthAllowValue(authAllowTestValue);
-		volumeMap.setVolumeIsTechPreview(true);
+		/*volumeMap.setVolumeIsTechPreview(true);*/
 		data.add(volumeMap);
 		volumeMap = new VolumeMap();
 		
