@@ -179,8 +179,7 @@
 				</methods>
 			</class>
 		</classes>
-	</test>
-
+	</test>	
 <!-- cifs and ntfs tests will fail due to missing gluster hooks and tcp port 111 not being opened in iptables -->
 <!--
 	<test name="Validate Volume CIFS support on volume options edit">
@@ -298,7 +297,7 @@
 		</classes>
 	</test>
 
-    <test name="Optimize For Virt Store">
+    <!--<test name="Optimize For Virt Store">
         <classes>
             <class name="com.redhat.qe.storageconsole.sahi.tests.VolumeTest">
                 <methods>
@@ -306,7 +305,7 @@
                 </methods>
             </class>
         </classes>
-    </test>
+    </test>-->
 
 	<test name="Create nested Brick Directories when adding bricks (like mkdir -p)">
 		<classes>
@@ -772,7 +771,6 @@
 			<class name="com.redhat.qe.storageconsole.sahi.tests.server.RestartTest">
 				<methods>
 					<include name="testRestart"></include>
-					<include name="testJboss"></include>
 				</methods>
 			</class>
 		</classes>
