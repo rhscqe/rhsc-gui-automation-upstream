@@ -48,7 +48,7 @@ public class LoginLogoutTest extends SahiTestBase{
 		tasks.logout();
 		Assert.assertTrue(browser.textbox("LoginFormView_userName").exists(), "Login user TextBox available?: "+browser.textbox("LoginFormView_userName").exists());
 		Assert.assertTrue(browser.password("LoginFormView_password").exists(), "Login user password field available?: "+browser.password("LoginFormView_password").exists());
-		Assert.assertTrue(browser.div("LoginFormView_loginButton").exists(), "Login button available?: "+browser.cell("LoginFormView_loginButton").exists());
+		Assert.assertTrue(browser.button("LoginFormView_loginButton").exists(), "Login button available?: "+browser.button("LoginFormView_loginButton").exists());
 	}
 	
 	@Test

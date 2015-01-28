@@ -93,7 +93,7 @@ public class RestartTest extends SahiTestBase{
 	 * @return
 	 */
 	private boolean isLoginPageDisplayed() {
-		return browser.div("Red Hat Storage").exists();
+		return browser.image("obrand_loginFormLogoImage").exists();
 	}
 
 	

@@ -61,8 +61,7 @@ public class StorageSahiGlusterSyncServerTasks {
 		ArrayList<ServerMap> serversToImport = new ArrayList<ServerMap>();
 		serversToImport.add(serverToAdd);
 		Assert.assertTrue(importTasks.importServers(baseServer.getClusterName(), serversToImport), "Server ["+ serverToAdd.getServerHostIP() + "] did not add!");
-		
-		Assert.assertTrue(storageSahiMessageTasks.validateLogMessage(SERVER_ADD_DETECTED));
+		Assert.assertTrue(storageSahiMessageTasks.validateLogMessage(SERVER_ADD_DETECTED.replace(".*.", serverMapList.get(1).getServerName())));
 
 		// Cleanup - Remove servers
 		

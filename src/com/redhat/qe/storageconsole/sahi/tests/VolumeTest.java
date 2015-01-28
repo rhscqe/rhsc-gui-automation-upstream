@@ -40,7 +40,7 @@ public class VolumeTest extends SahiTestBase {
 	private final String EVENT_MSG_VOLUME_EDIT_OPTION = "Volume Option .*. changed to ";
 	private final String EVENT_MSG_VOLUME_OPTION_CHANGED = "changed to .*. from";
 	private final String EVENT_MSG_VOLUME_RESET_ALL_OPTIONS = "All Volume Options reset on .*.";
-	private final String EVENT_MSG_VOLUME_RESET_OPTION = "Volume Option .*. reset on vol";
+	private final String EVENT_MSG_VOLUME_RESET_OPTION = "Volume Option .*. reset on ";
 	private final String EVENT_MSG_VOLUME_BRICKS_ADDED = ".*brick\\(s\\) added to volume .*.";
 	
 	StorageSahiVolumeTasks tasks = null;
@@ -175,9 +175,8 @@ public class VolumeTest extends SahiTestBase {
 	// Edit Volume Options
 	public void editVolumeOption(VolumeMap volumeMap) throws IOException, TestEnvironmentConfigException, JAXBException {
 		Assert.assertTrue(tasks.editVolumeOption(volumeMap), "Volume["+volumeMap.getVolumeName()+"] Edit Volume Option!");
-		/*String expectedMessage = EVENT_MSG_VOLUME_EDIT_OPTION.replace(".*.",volumeMap.getVolumeOptionKey() + "=" + volumeMap.getVolumeOptionValue());*/
 		String expectedMessage = EVENT_MSG_VOLUME_EDIT_OPTION.replace(".*.", volumeMap.getVolumeOptionKey());
-		Assert.assertTrue(storageSahiMessageTasks.validateLogMessage(expectedMessage + volumeMap.getVolumeEditOptionValue() + " from" + volumeMap.getVolumeOptionValue() + " on" + volumeMap.getVolumeName()));
+		Assert.assertTrue(storageSahiMessageTasks.validateLogMessage(expectedMessage + volumeMap.getVolumeEditOptionValue() + " from " + volumeMap.getVolumeOptionValue() + " on " + volumeMap.getVolumeName()));
 	}
 	
 	@Test (dataProvider="volumeCreationData")
@@ -194,7 +193,9 @@ public class VolumeTest extends SahiTestBase {
 	// Reset Volume Options
 	public void resetVolumeOption(VolumeMap volumeMap) throws IOException, TestEnvironmentConfigException, JAXBException {
 		Assert.assertTrue(tasks.resetVolumeOption(volumeMap), "Volume["+volumeMap.getVolumeName()+"] Reset Volume Option!");
-		String expectedMessage = EVENT_MSG_VOLUME_RESET_OPTION.replace(".*.",volumeMap.getVolumeOptionKey() + "=" + volumeMap.getVolumeOptionValue());
+		String expectedMessage = EVENT_MSG_VOLUME_RESET_OPTION.replace(".*.",volumeMap.getVolumeOptionKey() + "=" + volumeMap.getVolumeEditOptionValue());
+		String Message = expectedMessage + volumeMap.getVolumeName();
+		System.out.println("*********" + Message + "**********");
 		Assert.assertTrue(storageSahiMessageTasks.validateLogMessage(expectedMessage + volumeMap.getVolumeName()));
 	}
 	
