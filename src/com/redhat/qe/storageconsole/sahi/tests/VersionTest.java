@@ -20,6 +20,6 @@ public class VersionTest extends SahiTestBase{
 		String versionInfo = browser.getversion();
 		Assert.assertTrue(versionInfo.length()>0, "Validate version info");
 		System.setProperty("rhsc.build.version", versionInfo);
-		Reporter.log("<BR>Red Hat Gluster Storage Console Version: <b>"+versionInfo+"</b>");
+		Reporter.log("<BR>Red Hat Storage Console Version: <b>"+versionInfo+"</b>");
 	}
 }

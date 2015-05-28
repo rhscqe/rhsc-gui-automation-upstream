@@ -149,7 +149,7 @@ public class StorageBrowser extends ExtendedBrowser {
 	 */
 	public String getversion(){
 		this.link("About").click();
-		String dialogText = new Dialog("oVirt Engine Version", this).getText();
+		String dialogText = new Dialog("Red Hat Gluster Storage Console Version", this).getText();
 		String version = new RegexMatch(dialogText).find(": (\\w|\\.|-)+").get(0).getText().replaceAll(": ", "");
 		return version;
 	}
