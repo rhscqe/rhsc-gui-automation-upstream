@@ -635,6 +635,7 @@ public class StorageSahiVolumeTasks {
 			@Override
 			public TaskResult perform(Server server, String brickSetName, Brick brick) {
 				storageSahiTasks.select("AddBrickPopupView_serverEditor").choose(server.getHostname());
+				storageSahiTasks.checkbox("AddBrickPopupView_showBricksListEditor").click();
 				storageSahiTasks.textbox("AddBrickPopupView_exportDirEditor").setValue(brick.getLocation());
 				storageSahiTasks.div("AddBrickPopupView_addBrickButton").click();
 				if(isValidationInvalidBrickDirExpected(volumeMap)){
