@@ -30,8 +30,9 @@ public class StorageSahiSearchTasks {
 	
 	private final String searchBox = "SearchPanelView_searchStringInput";
 	private final String searchButton = "SearchPanelView_searchButton";
-	/*private final String clearButton = "SearchPanelView_clearButton";*/
-	private final String clearButton = "GAL0DYACLQD";
+	/*private final String clearButton = "SearchPanelView_clearButton";
+	private final String clearButton = "GAL0DYACLQD";*/
+	private final String clearButton = "gwt-InlineHTML pficon pficon-close";
 	
 	private final String equalTo = "=";
 	private final String notEqualTo = "!=";
@@ -195,7 +196,7 @@ public class StorageSahiSearchTasks {
 	}
 	
 	private void validateSearchResultsTable(List<HashMap<String, String>> table, String columnName, String expectedValue, String searchAttribute) {
-		storageSahiTasks.div(clearButton).click();
+		storageSahiTasks.span(clearButton).click();
 		
 		for (HashMap<String, String> row : table) {
 			String actualValue = row.get(columnName);
