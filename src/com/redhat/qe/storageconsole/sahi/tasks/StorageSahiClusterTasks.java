@@ -76,6 +76,7 @@ public class StorageSahiClusterTasks {
 		}
 		
 		storageSahiTasks.div("MainTabClusterView_table_New").click();
+		storageSahiTasks.waitFor(60);
 		storageSahiTasks.textbox("ClusterPopupView_nameEditor").setValue(cluster.getClusterName());
 		storageSahiTasks.textbox("ClusterPopupView_descriptionEditor").setValue(cluster.getClusterDescription());
 		storageSahiTasks.select("ClusterPopupView_versionEditor").choose(cluster.getClusterCompatibilityVersion());
