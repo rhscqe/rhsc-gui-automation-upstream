@@ -73,6 +73,7 @@ public class GuiTables {
 	public static final String BRICK_SERVER = "Server";
 	public static final String BRICK_DIRECTORY = "Brick Directory";
 	public static final String BRICK_ACTIVITIES = "Activities";
+	public static final String BRICK_SPACEUSED = "Space Used";
 	public static final String BRICK_TABLE_REFERENCE = "SubTabVolumeBrickView_table_content_col";
 	
 	/*
@@ -260,6 +261,7 @@ public class GuiTables {
 		LinkedList<String> keys = new LinkedList<String>();
 		keys.add(GuiTables.BRICK_SERVER);
 		keys.add(GuiTables.BRICK_DIRECTORY);
+		keys.add(GuiTables.BRICK_SPACEUSED);
 		keys.add(GuiTables.ACTIVITIES);
 		nearReference = storageTasks.div(6).near(storageTasks.div("Add"));
 		return getTableCore(storageTasks, GuiTables.BRICK_TABLE_REFERENCE, nearReference, keys);
