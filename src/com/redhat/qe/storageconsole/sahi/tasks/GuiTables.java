@@ -95,6 +95,7 @@ public class GuiTables {
     public static final String CLUSTER_SERVICES_SERVICE = "Service";
     public static final String CLUSTER_SERVICES_STATUS = "Status";
     public static final String CLUSTER_SERVICES_PORT = "Port";
+    public static final String CLUSTER_SERVICES_RDMAPORT = "RDMA Port";
     public static final String CLUSTER_SERVICES_PROCESS_ID = "Process Id";
     public static final String CLUSTER_SERVICES_TABLE_REFERENCE = GENERAL_TABLE_REFERENCE;    
     /*
@@ -247,6 +248,7 @@ public class GuiTables {
         keys.add(GuiTables.CLUSTER_SERVICES_SERVICE);
         keys.add(GuiTables.CLUSTER_SERVICES_STATUS);
         keys.add(GuiTables.CLUSTER_SERVICES_PORT);
+        keys.add(GuiTables.CLUSTER_SERVICES_RDMAPORT);
         keys.add(GuiTables.CLUSTER_SERVICES_PROCESS_ID);
         return getTableCore(storageTasks, GuiTables.CLUSTER_SERVICES_TABLE_REFERENCE, nearReference, keys);
     }
