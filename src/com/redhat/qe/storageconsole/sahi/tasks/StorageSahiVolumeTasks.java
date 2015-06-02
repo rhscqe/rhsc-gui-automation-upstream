@@ -1396,6 +1396,7 @@ public class StorageSahiVolumeTasks {
 	
 	
 	public boolean validateBrickSummaryTab(VolumeMap volumeMap) throws FileNotFoundException, TestEnvironmentConfigException, IOException, JAXBException {
+		storageSahiTasks.selectPage(volumeMap.getResourceLocation());
 		storageSahiTasks.div(volumeMap.getVolumeName()).click();
 		storageSahiTasks.link("Bricks").click();
 		
