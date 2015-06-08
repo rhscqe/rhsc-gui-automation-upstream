@@ -1061,6 +1061,8 @@ public class StorageSahiVolumeTasks {
 	 * @param volumeMap
 	 */
 	private void removeFromAuthAllowList(VolumeMap volumeMap, String hostname) {
+		storageSahiTasks.selectPage(volumeMap.getResourceLocation());
+		storageSahiTasks.waitFor(30);
 		storageSahiTasks.div(volumeMap.getVolumeName()).click();
 		storageSahiTasks.link("Volume Options").click();
 		WaitUtil.waitUntil(new WaitUtil.ElementIsVisible(storageSahiTasks.div("auth.allow")), 10);
