@@ -56,7 +56,8 @@ public class LoginLogoutTest extends SahiTestBase{
 		_logger.finer("Failed Login into RHSC GUI");
 		Assert.assertTrue(tasks.loginOrRelogin("invalidusername", "redhat", "internal"), "Login user TextBox available?: "+browser.textbox("LoginFormView_userName").exists());
 		Assert.assertTrue(browser.textbox("LoginFormView_userName").exists(), "Login user TextBox available?: "+browser.textbox("LoginFormView_userName").exists());
-		String loginErrorMessgae = "Login failed. Please verify your login information or contact the system administrator.";
-		Assert.assertTrue(browser.div(loginErrorMessgae).exists(), "Login error message["+loginErrorMessgae+"] available?: "+browser.div(loginErrorMessgae).exists());
+		//String loginErrorMessgae = "Login failed. Please verify your login information or contact the system administrator.";
+		String loginErrorMessgae = "The user name or password is incorrect.";
+		Assert.assertTrue(browser.span(loginErrorMessgae).exists(), "Login error message["+loginErrorMessgae+"] available?: "+browser.span(loginErrorMessgae).exists());
 	}
 }
