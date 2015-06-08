@@ -205,7 +205,8 @@ public class StorageSahiHooksTasks {
 	private void navigateToHooksTable(ServerMap server) {
 		Assert.assertTrue(storageSahiTasks.selectPage("System->Clusters"));
 		Assert.assertTrue(WaitUtil.waitUntil(new WaitUtil.ElementIsVisible(storageSahiTasks.div(server.getClusterName())), 10), "Hooks: Cluster [" + server.getClusterName() + "] did not appear!");
-		storageSahiTasks.div(server.getClusterName()).near(storageSahiTasks.div("Name")).click();
+		//storageSahiTasks.div(server.getClusterName()).near(storageSahiTasks.div("Name")).click();
+		storageSahiTasks.div(server.getClusterName()).click();
 		Assert.assertTrue(WaitUtil.waitUntil(new WaitUtil.ElementIsVisible(storageSahiTasks.div("Gluster Hooks")), 10), "Hooks: \"Gluster Hooks\" button did not appear!");
 		storageSahiTasks.div("Gluster Hooks").click();
 		storageSahiTasks.div("Sync").click(); // Ensure that the test file is Synced
