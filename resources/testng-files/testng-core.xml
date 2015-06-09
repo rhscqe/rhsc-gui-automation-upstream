@@ -22,7 +22,7 @@
 				</methods>
 			</class>
 		</classes>
-	</test>-->
+	</test>
 
 	<test name="Add Cluster">
 		<classes>
@@ -44,7 +44,7 @@
 		</classes>
 	</test>
 
-	<!--<test name="Check relevance of hosts appearing in servers drop-down for add-bricks">
+	<test name="Check relevance of hosts appearing in servers drop-down for add-bricks">
 		<classes>
 			<class name="com.redhat.qe.storageconsole.sahi.tests.ClusterTest">
 				<methods>
@@ -52,7 +52,7 @@
 				</methods>
 			</class>
 		</classes>
-	</test>-->
+	</test>
 
 	<test name="Add Volume">
 		<classes>
@@ -179,7 +179,7 @@
 				</methods>
 			</class>
 		</classes>
-	</test>	
+	</test>	-->
 <!-- cifs and ntfs tests will fail due to missing gluster hooks and tcp port 111 not being opened in iptables -->
 <!--
 	<test name="Validate Volume CIFS support on volume options edit">
@@ -227,7 +227,7 @@
 	</test>
 -->
 
-	<test name="Validate volume brick tab data">
+<!--	<test name="Validate volume brick tab data">
 		<classes>
 			<class name="com.redhat.qe.storageconsole.sahi.tests.VolumeTest">
 				<methods>
@@ -297,7 +297,7 @@
 		</classes>
 	</test>
 
-    <!--<test name="Optimize For Virt Store">
+    <test name="Optimize For Virt Store">
         <classes>
             <class name="com.redhat.qe.storageconsole.sahi.tests.VolumeTest">
                 <methods>
@@ -305,7 +305,7 @@
                 </methods>
             </class>
         </classes>
-    </test>-->
+    </test>
 
 	<test name="Create nested Brick Directories when adding bricks (like mkdir -p)">
 		<classes>
@@ -315,7 +315,7 @@
 				</methods>
 			</class>
 		</classes>
-	</test>
+	</test>-->
      
     <!--<test name="Remove Bricks">
         <classes>
@@ -327,7 +327,7 @@
          </classes>
      </test>-->
 
-	<test name="Stop Volume">
+	<!--<test name="Stop Volume">
 		<classes>
 			<class name="com.redhat.qe.storageconsole.sahi.tests.VolumeTest">
 				<methods>
@@ -435,7 +435,7 @@
 				</methods>
 			</class>
 		</classes>
-	</test>
+	</test>-->
 
 <!--
 	<test name="Create volume with bricks already existing on hosts">
@@ -449,7 +449,7 @@
 	</test>
 -->
 
-	<test name="Remove Server Not In Maintenance - Negative">
+	<!--<test name="Remove Server Not In Maintenance - Negative">
 		<classes>
 			<class name="com.redhat.qe.storageconsole.sahi.tests.ServerTest">
 				<methods>
@@ -634,7 +634,7 @@
 				</methods>
 			</class>
 		</classes>
-	</test>
+	</test>-->
 
 	<test name="Event - Basic View">
 		<classes>
