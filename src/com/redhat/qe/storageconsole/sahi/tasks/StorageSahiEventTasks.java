@@ -52,7 +52,8 @@ public class StorageSahiEventTasks {
 		storageSahiEventMessageTasks.waitForTableLoad();
 		
 		// Validate that the Advance View Column is not present
-		if (storageSahiTasks.div(2).containsText("Event ID")) {
+		//if (storageSahiTasks.div(2).containsText("Event ID")) { //commented by kasturi
+		if (storageSahiTasks.div("Event ID").exists()) {
 			storageSahiTasks._logger.log(Level.WARNING, "Unexpected number of columns in Events Basic View!");
 			return false;
 		}
