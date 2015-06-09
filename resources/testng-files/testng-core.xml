@@ -14,7 +14,7 @@
 		</classes>
 	</test>
 
-	<!--<test name="Get Version">
+	<test name="Get Version">
 		<classes>
 			<class name="com.redhat.qe.storageconsole.sahi.tests.VersionTest">
 				<methods>
@@ -179,7 +179,7 @@
 				</methods>
 			</class>
 		</classes>
-	</test>	-->
+	</test>	
 <!-- cifs and ntfs tests will fail due to missing gluster hooks and tcp port 111 not being opened in iptables -->
 <!--
 	<test name="Validate Volume CIFS support on volume options edit">
@@ -227,7 +227,7 @@
 	</test>
 -->
 
-<!--	<test name="Validate volume brick tab data">
+	<test name="Validate volume brick tab data">
 		<classes>
 			<class name="com.redhat.qe.storageconsole.sahi.tests.VolumeTest">
 				<methods>
@@ -317,7 +317,7 @@
 		</classes>
 	</test>-->
      
-    <!--<test name="Remove Bricks">
+    <test name="Remove Bricks">
         <classes>
              <class name="com.redhat.qe.storageconsole.sahi.tests.VolumeTest">
                  <methods>
@@ -325,9 +325,9 @@
                  </methods>
             </class>
          </classes>
-     </test>-->
+     </test>
 
-	<!--<test name="Stop Volume">
+	<test name="Stop Volume">
 		<classes>
 			<class name="com.redhat.qe.storageconsole.sahi.tests.VolumeTest">
 				<methods>
@@ -435,7 +435,7 @@
 				</methods>
 			</class>
 		</classes>
-	</test>-->
+	</test>
 
 <!--
 	<test name="Create volume with bricks already existing on hosts">
@@ -449,7 +449,7 @@
 	</test>
 -->
 
-	<!--<test name="Remove Server Not In Maintenance - Negative">
+	<test name="Remove Server Not In Maintenance - Negative">
 		<classes>
 			<class name="com.redhat.qe.storageconsole.sahi.tests.ServerTest">
 				<methods>
@@ -634,7 +634,7 @@
 				</methods>
 			</class>
 		</classes>
-	</test>-->
+	</test>
 
 	<test name="Event - Basic View">
 		<classes>
