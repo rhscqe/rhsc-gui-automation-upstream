@@ -1365,7 +1365,7 @@ public class StorageSahiVolumeTasks {
 		
 		storageSahiTasks.div("MainTabVolumeView_table_OptimizeForVirtStore").click();
 		storageSahiTasks.waitFor(20);
-		storageSahiTasks.div("Yes").click();
+		storageSahiTasks.div("DefaultConfirmationPopupView_ConfirmOptimiseForVirtStore").click();
 		
 		for (int x = 0; x < retryCount; x++) {
 			if (storageSahiTasks.div(optionUID).exists() && storageSahiTasks.div(optionGID).exists()) {
