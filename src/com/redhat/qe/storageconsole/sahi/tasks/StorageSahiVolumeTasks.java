@@ -740,6 +740,7 @@ public class StorageSahiVolumeTasks {
 		storageSahiTasks.div(volumeMap.getVolumeName()).click();
 		storageSahiTasks.link("Bricks").click();
 		storageSahiTasks.div("Add").click();
+		storageSahiTasks.waitFor(30);
 		storageSahiTasks.checkbox("AddBrickPopupView_showBricksListEditor").click();
 
 		if(! addBricksWithoutClosingDialog(volumeMap).isSuccessful())  return false;
