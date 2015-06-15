@@ -100,7 +100,7 @@
 		</classes>
 	</test>
 
-	<test name="Negative test case for adding bricks on a host that is down">
+	<!--<test name="Negative test case for adding bricks on a host that is down">
 		<classes>
 			<class name="com.redhat.qe.storageconsole.sahi.tests.VolumeTest">
 				<methods>
@@ -108,7 +108,7 @@
 				</methods>
 			</class>
 		</classes>
-	</test>
+	</test>-->
 
 	<test name="Create a distributed-stripe volume with stripe and brick count the same">
 		<classes>
