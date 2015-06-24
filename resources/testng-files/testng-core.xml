@@ -108,7 +108,7 @@
 				</methods>
 			</class>
 		</classes>
-	</test>-->
+	</test>
 
 	<test name="Create a distributed-stripe volume with stripe and brick count the same">
 		<classes>
@@ -118,7 +118,7 @@
 				</methods>
 			</class>
 		</classes>
-	</test>
+	</test>-->
 
 	<test name="Start Volume">
 		<classes>

@@ -27,8 +27,8 @@ public class SSHClient {
 	protected static final String commandStopVDSM = "service vdsmd stop";
 	protected static final String commandStartVDSM = "service vdsmd start";
 	protected static final String commandStopGlusterd = "service glusterd stop";
-	//protected static final String commandStartGlusterd = "glusterd";
-	protected static final String commandStartGlusterd = "service glusterd start";
+	protected static final String commandStartGlusterd = "glusterd";
+	//protected static final String commandStartGlusterd = "service glusterd start";
 	public final String commandGlusterPeerProbe = "gluster peer probe ";
 	public final String commandGlusterPeerDetach = "gluster peer detach ";
 	public final String commandGlusterPeerStatus = "gluster peer status ";

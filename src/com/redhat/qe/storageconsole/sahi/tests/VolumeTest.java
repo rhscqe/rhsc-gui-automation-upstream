@@ -275,7 +275,7 @@ public class VolumeTest extends SahiTestBase {
 		data.add(volumeMap);
 		volumeMap = new VolumeMap();
 
-		volumeMap.setResourceLocation("System->Volumes");
+		/*volumeMap.setResourceLocation("System->Volumes");
 		volumeMap.setClusterName("automation_cluster1");
 		volumeMap.setVolumeName("automation-volume-stripe");
 		volumeMap.setVolumeType(VolumeMap.VolumeType.STRIPE.toString());
@@ -290,9 +290,9 @@ public class VolumeTest extends SahiTestBase {
 		volumeMap.setVolumeAuthAllowValue(authAllowTestValue);
 		volumeMap.setVolumeIsTechPreview(true);
 		data.add(volumeMap);
-		volumeMap = new VolumeMap();			
+		volumeMap = new VolumeMap();	*/		
 		
-		volumeMap.setResourceLocation("System->Volumes");
+		/*volumeMap.setResourceLocation("System->Volumes");
 		volumeMap.setClusterName("automation_cluster1");
 		volumeMap.setVolumeName("automation-volume-distributed-stripe");
 		volumeMap.setVolumeType(VolumeMap.VolumeType.DISTRIBUTED_STRIPE.toString());
@@ -307,7 +307,7 @@ public class VolumeTest extends SahiTestBase {
 		volumeMap.setVolumeAuthAllowValue(authAllowTestValue);
 		volumeMap.setVolumeIsTechPreview(true);
 		data.add(volumeMap);
-		volumeMap = new VolumeMap();
+		volumeMap = new VolumeMap();*/
 		
 		volumeMap.setResourceLocation("System->Volumes");
 		volumeMap.setClusterName("automation_cluster1");
@@ -361,7 +361,7 @@ public class VolumeTest extends SahiTestBase {
 		return this.convertListTo2dArray(data);
 	}
 	
-	@DataProvider(name="volumeDataForDistributedStripeWithSameBrickvolumeMap.setVolumeIsTechPreview(true);AndStripeCount")
+	/*@DataProvider(name="volumeDataForDistributedStripeWithSameBrickvolumeMap.setVolumeIsTechPreview(true);AndStripeCount")
 	public Object[][] getVolumeDataForDistributedStripeWithSameBrickAndStripeCount() throws FileNotFoundException, IOException, JAXBException, TestEnvironmentConfigException{
 		final VolumeMap volumeMap = new VolumeMap();			
 		volumeMap.setResourceLocation("System->Volumes");
@@ -372,7 +372,7 @@ public class VolumeTest extends SahiTestBase {
 		volumeMap.setSpecialCount(4);
 		volumeMap.setWarningMsg(WarningMessage.VOLUME_TYPE_CHANGING_FROM_DISTRIBUTED_STRIPE_TO_STRIPE);
 		return this.convertListTo2dArray(new ArrayList<Object>(){{ add(volumeMap);}});
-	}
+	}*/
 
 	@DataProvider(name="volumeDataForDistributedReplicaWithAllBricksOnOneServer")
 	public Object[][] getVolumeDataForDistributedReplicaWithAllBricksOnOneServer(){
