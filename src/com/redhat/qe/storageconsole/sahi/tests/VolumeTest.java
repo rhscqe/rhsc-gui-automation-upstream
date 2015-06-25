@@ -32,7 +32,7 @@ import com.redhat.qe.storageconsole.te.TestEnvironmentConfigException;
  */
 public class VolumeTest extends SahiTestBase {
 	private final String EVENT_MSG_VOLUME_CREATEED = "Gluster Volume .*. created";
-	private final String EVENT_MSG_VOLUME_STARTED = "Gluster Volume .*. started";
+	private final String EVENT_MSG_VOLUME_STARTED = "Gluster Volume .*. of cluster automation_cluster1 started";
 	private final String EVENT_MSG_VOLUME_STOPPED = "Gluster Volume .*. stopped";
 	private final String EVENT_MSG_VOLUME_REMOVED = "Gluster Volume .*. deleted";
 	private final String EVENT_MSG_VOLUME_BRICKS_REMOVED = "Bricks removed from Gluster Volume .*.";
@@ -442,7 +442,7 @@ public class VolumeTest extends SahiTestBase {
 		data.add(volumeMap);
 		volumeMap = new VolumeMap();
 		// Create a volume of type 'Stripe' with number of bricks unequal to stripe count - negative
-		volumeMap.setPositive(false);
+		/*volumeMap.setPositive(false);
 		volumeMap.setErrorMsg("Number of bricks should be equal to Stripe Count");
 		volumeMap.setResourceLocation("System->Volumes");
 		volumeMap.setClusterName("automation_cluster1");
@@ -452,9 +452,9 @@ public class VolumeTest extends SahiTestBase {
 		volumeMap.setNfsEnabled(true);
 		volumeMap.setSpecialCount(4);
 		data.add(volumeMap);
-		volumeMap = new VolumeMap();
+		volumeMap = new VolumeMap();*/
 		// Create a volume of type 'Distributed Stripe' with number of bricks not a multiple of stripe count - negative
-		volumeMap.setPositive(false);
+		/*volumeMap.setPositive(false);
 		volumeMap.setErrorMsg("Number of bricks should be a mutiple of Stripe Count");
 		volumeMap.setResourceLocation("System->Volumes");
 		volumeMap.setClusterName("automation_cluster1");
@@ -464,7 +464,7 @@ public class VolumeTest extends SahiTestBase {
 		volumeMap.setNfsEnabled(true);
 		volumeMap.setSpecialCount(4);
 		data.add(volumeMap);
-		volumeMap = new VolumeMap();
+		volumeMap = new VolumeMap();*/
 		// Create a volume of type 'Replicate' with number of bricks not equal to replica count- negative
 		volumeMap.setPositive(false);
 		volumeMap.setErrorMsg("Number of bricks should be equal to Replica Count");
