@@ -312,7 +312,7 @@ public class StorageSahiImportTasks {
         storageSahiTasks.div("General").click();
         Assert.assertTrue(WaitUtil.waitUntil(new WaitUtil.ElementIsVisible(storageSahiTasks.link("Import")), 5), "Import link did not appear");
         storageSahiTasks.link("Import").click();
-        
+        storageSahiTasks.waitFor(30);
         Assert.assertTrue(addServersDialog(serverMapList, serverMapList.size()));        
 		return validateServersUp(serverMapList, serverMapList.size());
 	}

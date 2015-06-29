@@ -39,7 +39,7 @@ public class VolumeTest extends SahiTestBase {
 	private final String EVENT_MSG_VOLUME_ADD_OPTION = "Volume Option .*. set on ";
 	private final String EVENT_MSG_VOLUME_EDIT_OPTION = "Volume Option .*. changed to ";
 	private final String EVENT_MSG_VOLUME_OPTION_CHANGED = "changed to .*. from";
-	private final String EVENT_MSG_VOLUME_RESET_ALL_OPTIONS = "All Volume Options reset on .*.";
+	private final String EVENT_MSG_VOLUME_RESET_ALL_OPTIONS = "All Volume Options reset on .*. of cluster automation_cluster1";
 	private final String EVENT_MSG_VOLUME_RESET_OPTION = "Volume Option .*. reset on ";
 	private final String EVENT_MSG_VOLUME_BRICKS_ADDED = ".*brick\\(s\\) added to volume .*.";
 	

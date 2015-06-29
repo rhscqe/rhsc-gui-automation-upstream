@@ -111,7 +111,7 @@ public class GlusterSyncTest extends SahiTestBase{
 		data.add(volumeMap);
 		volumeMap = new VolumeMap();
 		//Volume of striped type
-		volumeMap.setResourceLocation("System->System->Volumes");
+		/*volumeMap.setResourceLocation("System->System->Volumes");
 		volumeMap.setVolumeName("sync-volume-stripe");
 		volumeMap.setVolumeType(VolumeMap.VolumeType.STRIPE.toString());
 		volumeMap.setServers("{server23=bricks-stripe-1}{server24=bricks-stripe-1}");
@@ -121,7 +121,7 @@ public class GlusterSyncTest extends SahiTestBase{
 		volumeOptions.add(option);
 		volumeMap.setVolumeOptions(volumeOptions);
 		data.add(volumeMap);
-		volumeMap = new VolumeMap();
+		volumeMap = new VolumeMap();*/
 		//Volume of distributed-replicate type
 		volumeMap.setResourceLocation("System->System->Volumes");
 		volumeMap.setVolumeName("sync-volume-distributed-replicate");
@@ -134,7 +134,7 @@ public class GlusterSyncTest extends SahiTestBase{
 		data.add(volumeMap);
 		volumeMap = new VolumeMap();
 		//Volume of distributed-striped type
-		volumeMap.setResourceLocation("System->System->Volumes");
+		/*volumeMap.setResourceLocation("System->System->Volumes");
 		volumeMap.setVolumeName("sync-volume-distributed-stripe");
 		volumeMap.setVolumeType(VolumeMap.VolumeType.DISTRIBUTED_STRIPE.toString());
 		volumeMap.setServers("{server23=bricks-distributed-stripe-1}{server24=bricks-distributed-stripe-1}");
@@ -143,7 +143,7 @@ public class GlusterSyncTest extends SahiTestBase{
 		option = new VolumeOptionsMap(VolumeMap.optionType.DIAGNOSTICS_BRICK_SYS_LOG_LEVEL.toString(), "ERROR", "CRITICAL");
 		volumeOptions.add(option);
 		volumeMap.setVolumeOptions(volumeOptions);
-		data.add(volumeMap);
+		data.add(volumeMap);*/
 		return this.convertListTo2dArray(data);
 	}
 
