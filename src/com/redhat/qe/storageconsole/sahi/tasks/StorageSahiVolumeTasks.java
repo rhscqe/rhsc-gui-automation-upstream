@@ -359,7 +359,7 @@ public class StorageSahiVolumeTasks {
 			throws TestEnvironmentConfigException, FileNotFoundException,
 			IOException, JAXBException {
 		setReplicaOrStripeCount(volumeMap);
-		storageSahiTasks.checkbox("AddBrickPopupView_showBricksListEditor").click();
+		//storageSahiTasks.checkbox("AddBrickPopupView_showBricksListEditor").click();
 		return addBricks(volumeMap);
 	}
 
@@ -636,6 +636,8 @@ public class StorageSahiVolumeTasks {
 			@Override
 			public TaskResult perform(Server server, String brickSetName, Brick brick) {
 				storageSahiTasks.select("AddBrickPopupView_serverEditor").choose(server.getHostname());
+				storageSahiTasks.checkbox("AddBrickPopupView_showBricksListEditor").uncheck();
+				storageSahiTasks.waitFor(30);
 				storageSahiTasks.textbox("AddBrickPopupView_exportDirEditor").setValue(brick.getLocation());
 				storageSahiTasks.div("AddBrickPopupView_addBrickButton").click();
 				if(isValidationInvalidBrickDirExpected(volumeMap)){
