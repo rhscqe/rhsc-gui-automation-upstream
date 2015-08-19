@@ -227,7 +227,7 @@
 	</test>
 -->
 
-	<test name="Validate volume brick tab data">
+	<!--<test name="Validate volume brick tab data">
 		<classes>
 			<class name="com.redhat.qe.storageconsole.sahi.tests.VolumeTest">
 				<methods>
@@ -315,7 +315,7 @@
 				</methods>
 			</class>
 		</classes>
-	</test>
+	</test>-->
      
     <test name="Remove Bricks">
         <classes>

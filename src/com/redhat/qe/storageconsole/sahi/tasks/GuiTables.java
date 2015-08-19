@@ -333,7 +333,6 @@ public class GuiTables {
 		int cellNo=1;
 		String cellValue = null;
 		cellCount = cellCount -1;
-		_logger.log(Level.INFO, "*****cell Count is ****" + cellCount);
 		while(cellNo < cellCount){
 			for(String key : keys){
 				if (!key.equals(GuiTables.ACTIVITIES)) {
@@ -343,15 +342,11 @@ public class GuiTables {
 						cellValue = storageTasks.div("/"+cellReference+"/["+cellNo+"]").near(nearReference).getText().trim();
 					}
 					_logger.log(Level.INFO, "cellCount: " + cellCount + "  cellNo: " + cellNo + "  key: " + key + "  cellValue: " + cellValue);
-					if (cellValue.equals(' ')){
-						_logger.log(Level.INFO, "cellvalue is none");
-					}
-					else {
-						row.put(key, cellValue);
-					}
 					
+					row.put(key, cellValue);
 					cellNo++;
 				}
+			
 			}
 			table.add(row);
 			row = new HashMap<String,String>();
