@@ -361,80 +361,7 @@ public class VolumeTest extends SahiTestBase {
 		return this.convertListTo2dArray(data);
 	}
 	
-	@DataProvider(name="volumeBrickValidationData")
-	public Object[][] VolumeBrickValidationData() throws FileNotFoundException, IOException, JAXBException, TestEnvironmentConfigException{
-		ArrayList<Object> data = new ArrayList<Object>();
-		VolumeMap volumeMap = new VolumeMap();
-		String authAllowTestValue = null;
-		volumeMap.setResourceLocation("System->Volumes");
-		volumeMap.setClusterName("automation_cluster1");
-		volumeMap.setVolumeName("automation-volume-distribute");
-		volumeMap.setVolumeType(VolumeMap.VolumeType.DISTRIBUTE.toString());
-		volumeMap.setServers("{10.70.37.113=bricks-distribute-1}{10.70.37.192=bricks-distribute-1}");
-		volumeMap.setNfsEnabled(true);
-		volumeMap.setSpecialCount(0);
-		volumeMap.setClientMachines(TestEnvironmentConfig.getTestEnvironemt().getClientMachines());
-		volumeMap.setVolumeOptionKey(VolumeMap.optionType.DIAGNOSTICS_BRICK_SYS_LOG_LEVEL.toString());
-		volumeMap.setVolumeOptionValue("ERROR");
-		volumeMap.setVolumeEditOptionValue("CRITICAL");
-		authAllowTestValue = TestEnvironmentConfig.getTestEnvironemt().getGeneralKeyValueMapFromKey("SINGLE_IP").getValue();
-		volumeMap.setVolumeAuthAllowValue(authAllowTestValue);
-		data.add(volumeMap);
-		volumeMap = new VolumeMap();
-
-		
-		
-		volumeMap.setResourceLocation("System->Volumes");
-		volumeMap.setClusterName("automation_cluster1");
-		volumeMap.setVolumeName("automation-volume-replicate");
-		volumeMap.setVolumeType(VolumeMap.VolumeType.REPLICATE.toString());
-		volumeMap.setServers("{10.70.37.113=bricks-replicate-1}{10.70.37.192=bricks-replicate-1}");
-		volumeMap.setNfsEnabled(true);
-		volumeMap.setSpecialCount(8);
-		volumeMap.setClientMachines(TestEnvironmentConfig.getTestEnvironemt().getClientMachines());
-		volumeMap.setVolumeOptionKey(VolumeMap.optionType.PERFORMANCE_FLUSH_BEHIND.toString());
-		volumeMap.setVolumeOptionValue("on");
-		volumeMap.setVolumeEditOptionValue("off");
-		authAllowTestValue = TestEnvironmentConfig.getTestEnvironemt().getGeneralKeyValueMapFromKey("ALLOW_ALL").getValue();
-		volumeMap.setVolumeAuthAllowValue(authAllowTestValue);
-		//volumeMap.setVolumeIsTechPreview(true);
-		data.add(volumeMap);
-		volumeMap = new VolumeMap();
-		
-		volumeMap.setResourceLocation("System->Volumes");
-		volumeMap.setClusterName("automation_cluster1");
-		volumeMap.setVolumeName("automation-volume-distributed-replicate");
-		volumeMap.setVolumeType(VolumeMap.VolumeType.DISTRIBUTED_REPLICATE.toString());
-		volumeMap.setServers("{10.70.37.113=bricks-distributed-replicate-1}{10.70.37.192=bricks-distributed-replicate-1}");
-		volumeMap.setNfsEnabled(true);
-		volumeMap.setSpecialCount(4);
-		volumeMap.setClientMachines(TestEnvironmentConfig.getTestEnvironemt().getClientMachines());
-		volumeMap.setVolumeOptionKey(VolumeMap.optionType.PERFORMANCE_FLUSH_BEHIND.toString());
-		volumeMap.setVolumeOptionValue("off");
-		volumeMap.setVolumeEditOptionValue("on");
-		authAllowTestValue = TestEnvironmentConfig.getTestEnvironemt().getGeneralKeyValueMapFromKey("COMMA_SEPARATED_HOSTNAMES").getValue();
-		volumeMap.setVolumeAuthAllowValue(authAllowTestValue);
-		//volumeMap.setVolumeIsTechPreview(true);
-		data.add(volumeMap);
-		volumeMap = new VolumeMap();
-		
-		volumeMap.setResourceLocation("System->Volumes");// Adding bricks from different directories
-		volumeMap.setClusterName("automation_cluster1");
-		volumeMap.setVolumeName("automation-volume-distribute-2");
-		volumeMap.setVolumeType(VolumeMap.VolumeType.DISTRIBUTE.toString());
-		volumeMap.setServers("{10.70.37.113=bricks-distribute-3}{10.70.37.192=bricks-distribute-3}");
-		volumeMap.setNfsEnabled(true);
-		volumeMap.setSpecialCount(0);
-		volumeMap.setClientMachines(TestEnvironmentConfig.getTestEnvironemt().getClientMachines());
-		volumeMap.setVolumeOptionKey(VolumeMap.optionType.PERFORMANCE_LOW_PRIO_THREADS.toString());
-		volumeMap.setVolumeOptionValue("10");
-		volumeMap.setVolumeEditOptionValue("15");
-		authAllowTestValue = TestEnvironmentConfig.getTestEnvironemt().getGeneralKeyValueMapFromKey("COMMA_SEPARATED_IP_HOSTNAME").getValue();
-		volumeMap.setVolumeAuthAllowValue(authAllowTestValue);
-		data.add(volumeMap);
-			
-		return this.convertListTo2dArray(data);
-	}
+	
 	
 	/*@DataProvider(name="volumeDataForDistributedStripeWithSameBrickvolumeMap.setVolumeIsTechPreview(true);AndStripeCount")
 	public Object[][] getVolumeDataForDistributedStripeWithSameBrickAndStripeCount() throws FileNotFoundException, IOException, JAXBException, TestEnvironmentConfigException{
@@ -580,7 +507,7 @@ public class VolumeTest extends SahiTestBase {
 		return this.convertListTo2dArray(data);
 	}
 
-	@Test (dataProvider="volumeBrickValidationData")
+	@Test (dataProvider="volumeCreationData")
 	// Validate Volume Brick Summary Tab Data
 	public void validateVolumeBrickSummaryTab(VolumeMap volumeMap) throws IOException, TestEnvironmentConfigException, JAXBException, InterruptedException{
 	        Assert.assertTrue(tasks.validateBrickSummaryTab(volumeMap), "Volume["+volumeMap.getVolumeName()+"] brick tab failed to be verified!");
