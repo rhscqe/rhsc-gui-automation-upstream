@@ -343,7 +343,13 @@ public class GuiTables {
 						cellValue = storageTasks.div("/"+cellReference+"/["+cellNo+"]").near(nearReference).getText().trim();
 					}
 					_logger.log(Level.INFO, "cellCount: " + cellCount + "  cellNo: " + cellNo + "  key: " + key + "  cellValue: " + cellValue);
-					row.put(key, cellValue);
+					if (cellValue.equals(' ')){
+						_logger.log(Level.INFO, "cellvalue is none");
+					}
+					else {
+						row.put(key, cellValue);
+					}
+					
 					cellNo++;
 				}
 			}
