@@ -330,9 +330,9 @@ public class GuiTables {
 			//TODO: throw exception
 			_logger.log(Level.WARNING, "Column count missmatch with actual column!!");
 		}
-		int cellNo=1;
+		int cellNo=0;
 		String cellValue = null;
-		while(cellNo < cellCount){
+		while(cellNo < cellCount-1){
 			for(String key : keys){
 				if (!key.equals(GuiTables.ACTIVITIES)) {
 					if(nearReference == null){
