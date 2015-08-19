@@ -14,7 +14,7 @@
 		</classes>
 	</test>
 
-	<!--<test name="Get Version">
+	<test name="Get Version">
 		<classes>
 			<class name="com.redhat.qe.storageconsole.sahi.tests.VersionTest">
 				<methods>
@@ -98,7 +98,7 @@
 				</methods>
 			</class>
 		</classes>
-	</test>-->
+	</test>
 
 	<!--<test name="Negative test case for adding bricks on a host that is down">
 		<classes>
@@ -120,7 +120,7 @@
 		</classes>
 	</test>-->
 
-	<!--<test name="Start Volume">
+	<test name="Start Volume">
 		<classes>
 			<class name="com.redhat.qe.storageconsole.sahi.tests.VolumeTest">
 				<methods>
@@ -138,7 +138,7 @@
 				</methods>
 			</class>
 		</classes>
-	</test>-->
+	</test>
 
   <test name="Move Brick up/down">
 		<classes>
