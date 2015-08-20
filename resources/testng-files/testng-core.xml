@@ -14,7 +14,7 @@
 		</classes>
 	</test>
 
-	<test name="Get Version">
+	<!--<test name="Get Version">
 		<classes>
 			<class name="com.redhat.qe.storageconsole.sahi.tests.VersionTest">
 				<methods>
@@ -22,7 +22,7 @@
 				</methods>
 			</class>
 		</classes>
-	</test>
+	</test>-->
 
 	<test name="Add Cluster">
 		<classes>
@@ -180,6 +180,7 @@
 			</class>
 		</classes>
 	</test>	
+	
 <!-- cifs and ntfs tests will fail due to missing gluster hooks and tcp port 111 not being opened in iptables -->
 <!--
 	<test name="Validate Volume CIFS support on volume options edit">
