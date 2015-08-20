@@ -14,7 +14,7 @@
 		</classes>
 	</test>
 
-	<!--<test name="Get Version">
+	<test name="Get Version">
 		<classes>
 			<class name="com.redhat.qe.storageconsole.sahi.tests.VersionTest">
 				<methods>
@@ -22,7 +22,7 @@
 				</methods>
 			</class>
 		</classes>
-	</test>-->
+	</test>
 
 	<test name="Add Cluster">
 		<classes>
