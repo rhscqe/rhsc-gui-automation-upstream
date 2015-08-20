@@ -263,8 +263,8 @@ public class GuiTables {
 		keys.add(GuiTables.BRICK_DIRECTORY);
 		keys.add(GuiTables.BRICK_SPACEUSED);
 		keys.add(GuiTables.ACTIVITIES);
-		//nearReference = storageTasks.div(6).near(storageTasks.div("Add"));
-		nearReference = storageTasks.div("SubTabVolumeBrickView_table_Add_Bricks");
+		nearReference = storageTasks.div(6).near(storageTasks.div("Add"));
+		//nearReference = storageTasks.div("SubTabVolumeBrickView_table_Add_Bricks");
 		return getTableCore(storageTasks, GuiTables.BRICK_TABLE_REFERENCE, nearReference, keys);
 	}
 	
@@ -332,7 +332,6 @@ public class GuiTables {
 		}
 		int cellNo=1;
 		String cellValue = null;
-		cellCount = cellCount -1;
 		while(cellNo < cellCount){
 			for(String key : keys){
 				if (!key.equals(GuiTables.ACTIVITIES)) {
