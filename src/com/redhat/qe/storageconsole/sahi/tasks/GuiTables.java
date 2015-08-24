@@ -338,7 +338,13 @@ public class GuiTables {
 					if(nearReference == null){
 						cellValue = storageTasks.div("/"+cellReference+"/["+cellNo+"]").getText().trim();
 					}else{
-						cellValue = storageTasks.div("/"+cellReference+"/["+cellNo+"]").near(nearReference).getText().trim();
+						if(storageTasks.div("/"+cellReference+"/["+cellNo+"]").near(nearReference).exists()){
+							cellValue = storageTasks.div("/"+cellReference+"/["+cellNo+"]").near(nearReference).getText().trim();
+						}
+						else {
+							_logger.log(Level.INFO, "Element does not exist");
+						}
+						
 					}
 					_logger.log(Level.INFO, "cellCount: " + cellCount + "  cellNo: " + cellNo + "  key: " + key + "  cellValue: " + cellValue);
 					
