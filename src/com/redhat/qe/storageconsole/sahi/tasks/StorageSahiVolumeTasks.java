@@ -65,7 +65,8 @@ public class StorageSahiVolumeTasks {
 	/**
 	 * 
 	 */
-	private static final String LAVENDER = "rgb(195, 208, 224)";
+	//private static final String LAVENDER = "rgb(195, 208, 224)";
+	private static final String LAVENDER = "rgb(255, 255, 255)";
 	private static int NUM_ATTEMPTS = 10;
 	StorageCLITasks storageCliTasks = new StorageCLITasks();
 	StorageBrowser storageSahiTasks = null;
