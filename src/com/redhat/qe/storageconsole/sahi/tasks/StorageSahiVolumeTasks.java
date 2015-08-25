@@ -1172,7 +1172,7 @@ public class StorageSahiVolumeTasks {
 		storageSahiTasks.clickRefresh("Volume");
 		clickVolumeBrickRow(firstRow);
 		validateBrickRowIsSelected(firstRow);
-		ElementStub fourthRow = getVolumeBrickRow(3);
+		ElementStub fourthRow = getVolumeBrickRow(12);
 		storageSahiTasks._logger.log(Level.INFO, "fourth row is" + fourthRow);
 		storageSahiTasks._logger.log(Level.INFO, "fourth row after converting to string is" + fourthRow.toString());
 		storageSahiTasks.execute(String.format("_sahi._click(%s, 'CTRL');", fourthRow.toString()));   // Select 2nd row
