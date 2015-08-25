@@ -1175,7 +1175,7 @@ public class StorageSahiVolumeTasks {
 		ElementStub fourthRow = getVolumeBrickRow(3);
 		storageSahiTasks._logger.log(Level.INFO, "fourth row is" + fourthRow);
 		storageSahiTasks._logger.log(Level.INFO, "fourth row after converting to string is" + fourthRow.toString());
-		storageSahiTasks.execute(String.format("_sahi._click(%s, 'CTRL');", fourthRow.toString()));   // Select 2nd row
+		storageSahiTasks.execute(String.format("_sahi._click._div(%s, 'CTRL');", fourthRow.toString()));   // Select 2nd row
 		validateBrickRowIsSelected(fourthRow);
 		
 		
@@ -1194,7 +1194,7 @@ public class StorageSahiVolumeTasks {
 	 * @return
 	 */
 	private ElementStub getVolumeBrickRow(int rowNum) {
-		return storageSahiTasks.div(String.format("/%s/[%s]", GuiTables.BRICK_TABLE_REFERENCE, rowNum)).near(NEAR_REF_BRICKS_TABLE);
+		return storageSahiTasks.div(String.format("/%s_%s_row%s", GuiTables.BRICK_TABLE_REFERENCE,  rowNum, rowNum)).near(NEAR_REF_BRICKS_TABLE);
 	}
 
 	/**
