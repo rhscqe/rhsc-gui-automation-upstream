@@ -259,6 +259,7 @@ public class GuiTables {
 	 */
 	public static LinkedList<HashMap<String, String>> getBricksTable(StorageBrowser storageTasks, ElementStub nearReference){
 		LinkedList<String> keys = new LinkedList<String>();
+		keys.add(GuiTables.STATUS);
 		keys.add(GuiTables.BRICK_SERVER);
 		keys.add(GuiTables.BRICK_DIRECTORY);
 		keys.add(GuiTables.BRICK_SPACEUSED);
@@ -317,7 +318,7 @@ public class GuiTables {
 	public static LinkedList<HashMap<String, String>> getTableCore(StorageBrowser storageTasks, String cellReference, ElementStub nearReference, LinkedList<String> keys){
 		LinkedList<HashMap<String, String>> table = new LinkedList<HashMap<String,String>>();
 		HashMap<String,String> row = new HashMap<String,String>();
-		int cellCount = 0;
+		int cellCount;
 		if(nearReference == null){
 			cellCount = storageTasks.div("/"+cellReference+"/").countSimilar();
 		}else{
