@@ -320,10 +320,8 @@ public class GuiTables {
 		int cellCount;
 		if(nearReference == null){
 			cellCount = storageTasks.div("/"+cellReference+"/").countSimilar();
-			_logger.log(Level.INFO, "Cellcount when no reference" + cellCount);
 		}else{
 			cellCount = storageTasks.div("/"+cellReference+"/").near(nearReference).countSimilar();
-			_logger.log(Level.INFO, "Cellcount when reference" + cellCount);
 		}
 		//_logger.log(Level.FINE, "REF: "+cellReference+" and nearRef:" + nearReference+", Cell Count and keys.size(): "+cellCount + " " + keys.size());
 		if(cellCount%keys.size() != 0){
@@ -346,7 +344,7 @@ public class GuiTables {
 						}
 						
 					}
-					_logger.log(Level.INFO, "cellCount: " + cellCount + "  cellNo: " + cellNo + "  key: " + key + "  cellValue: " + cellValue);
+					//_logger.log(Level.INFO, "cellCount: " + cellCount + "  cellNo: " + cellNo + "  key: " + key + "  cellValue: " + cellValue);
 					
 					row.put(key, cellValue);
 					cellNo++;
