@@ -317,7 +317,7 @@ public class GuiTables {
 	public static LinkedList<HashMap<String, String>> getTableCore(StorageBrowser storageTasks, String cellReference, ElementStub nearReference, LinkedList<String> keys){
 		LinkedList<HashMap<String, String>> table = new LinkedList<HashMap<String,String>>();
 		HashMap<String,String> row = new HashMap<String,String>();
-		int cellCount;
+		int cellCount = 0;
 		if(nearReference == null){
 			cellCount = storageTasks.div("/"+cellReference+"/").countSimilar();
 		}else{
@@ -336,13 +336,7 @@ public class GuiTables {
 					if(nearReference == null){
 						cellValue = storageTasks.div("/"+cellReference+"/["+cellNo+"]").getText().trim();
 					}else{
-						if(storageTasks.div("/"+cellReference+"/["+cellNo+"]").near(nearReference).exists()){
-							cellValue = storageTasks.div("/"+cellReference+"/["+cellNo+"]").near(nearReference).getText().trim();
-						}
-						else {
-							_logger.log(Level.INFO, "Element does not exist");
-						}
-						
+						cellValue = storageTasks.div("/"+cellReference+"/["+cellNo+"]").near(nearReference).getText().trim();
 					}
 					//_logger.log(Level.INFO, "cellCount: " + cellCount + "  cellNo: " + cellNo + "  key: " + key + "  cellValue: " + cellValue);
 					
