@@ -489,8 +489,9 @@ public class StorageSahiImportTasks {
 		// Example: "stderr:::stdout:2048 2b:11:18:7b:79:8e:04:f3:b8:48:6c:2b:bb:4e:62:84 /etc/ssh/ssh_host_rsa_key.pub (RSA)"
 		storageSahiTasks._logger.log(Level.INFO,"command output before"+ commandOutput);
 		commandOutput = commandOutput.substring(commandOutput.indexOf("stdout:"));
-		storageSahiTasks._logger.log(Level.INFO, commandOutput);
-		fingerprint = commandOutput.substring(commandOutput.indexOf(' '), commandOutput.lastIndexOf(" /"));
+		storageSahiTasks._logger.log(Level.INFO, "command ouput after" + commandOutput);
+		//fingerprint = commandOutput.substring(commandOutput.indexOf(' '), commandOutput.lastIndexOf(" /"));
+		fingerprint = commandOutput.substring(commandOutput.indexOf(' '));
 		return fingerprint.trim();
 	}
 	
