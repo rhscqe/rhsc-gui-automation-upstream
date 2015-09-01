@@ -490,8 +490,8 @@ public class StorageSahiImportTasks {
 		storageSahiTasks._logger.log(Level.INFO,"command output before"+ commandOutput);
 		commandOutput = commandOutput.substring(commandOutput.indexOf("stdout:"));
 		storageSahiTasks._logger.log(Level.INFO, "command ouput after" + commandOutput);
-		//fingerprint = commandOutput.substring(commandOutput.indexOf(' '), commandOutput.lastIndexOf(" /"));
-		fingerprint = commandOutput.substring(commandOutput.indexOf(' '));
+		fingerprint = commandOutput.substring(commandOutput.indexOf(' '), commandOutput.lastIndexOf(" )"));
+		storageSahiTasks._logger.log(Level.INFO, "fingerprint is" + fingerprint.trim());
 		return fingerprint.trim();
 	}
 	
