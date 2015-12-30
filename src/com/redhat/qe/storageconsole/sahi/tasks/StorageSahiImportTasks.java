@@ -490,8 +490,9 @@ public class StorageSahiImportTasks {
 		// Example: "stderr:::stdout:2048 2b:11:18:7b:79:8e:04:f3:b8:48:6c:2b:bb:4e:62:84 /etc/ssh/ssh_host_rsa_key.pub (RSA)"
 		
 		commandOutput = commandOutput.substring(commandOutput.indexOf("stdout:"));
-		fingerprint = commandOutput.substring(commandOutput.indexOf(' '), commandOutput.lastIndexOf(" /"));
-		//fingerprint = commandOutput.substring(commandOutput.indexOf(' '), commandOutput.lastIndexOf(" "));
+		System.out.println("Version of OS is" + System.getProperty("os.version"));
+		fingerprint = commandOutput.substring(commandOutput.indexOf(' '), commandOutput.lastIndexOf(" /")); // To extract fingerprint for RHEL6 nodes
+		//fingerprint = commandOutput.substring(commandOutput.indexOf(' '), commandOutput.lastIndexOf(" ")); // To extract fingerprint for RHEL7 nodes
 		return fingerprint.trim();
 	}
 	
