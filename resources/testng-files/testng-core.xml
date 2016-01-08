@@ -24,7 +24,7 @@
 		</classes>
 	</test>
 
-	<!--<test name="Add Cluster">
+	<test name="Add Cluster">
 		<classes>
 			<class name="com.redhat.qe.storageconsole.sahi.tests.ClusterTest">
 				<methods>
@@ -34,7 +34,7 @@
 		</classes>
 	</test>
 
-	<test name="Add Server">
+	<!--<test name="Add Server">
 		<classes>
 			<class name="com.redhat.qe.storageconsole.sahi.tests.ServerTest">
 				<methods>
