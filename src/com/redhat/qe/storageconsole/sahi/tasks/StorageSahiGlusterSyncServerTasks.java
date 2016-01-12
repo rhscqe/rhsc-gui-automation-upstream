@@ -54,7 +54,7 @@ public class StorageSahiGlusterSyncServerTasks {
 
         // Begin test - Add server
          
-        String commandOutput_one = storageCLITasks.runGenericCommand(baseServer.getServerHostIP(), baseServer.getServerUsername(), baseServer.getServerPassword(), storageCLITasks.commandRunGlusterd);
+        String commandOutput_one = storageCLITasks.runGenericCommand(serverToAdd.getServerHostIP(), baseServer.getServerUsername(), baseServer.getServerPassword(), storageCLITasks.commandRunGlusterd);
 		String command = storageCLITasks.commandGlusterPeerProbe + serverToAdd.getServerHostIP();
 		String commandOutput = storageCLITasks.runGenericCommand(baseServer.getServerHostIP(), baseServer.getServerUsername(), baseServer.getServerPassword(), command);
 		Assert.assertTrue(commandOutput.contains("success"), "Server [" + serverToAdd.getServerHostIP() + "] add failed!");
