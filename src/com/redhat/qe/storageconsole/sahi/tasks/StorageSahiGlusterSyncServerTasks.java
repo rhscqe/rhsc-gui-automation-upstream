@@ -146,6 +146,7 @@ public class StorageSahiGlusterSyncServerTasks {
         	return false;
 		}
 		
+		storageCLITasks.runGenericCommand(baseServer.getServerHostIP(), baseServer.getServerUsername(), baseServer.getServerPassword(), storageCLITasks.commandRunGlusterd);
 		return true;
 	}
 	
