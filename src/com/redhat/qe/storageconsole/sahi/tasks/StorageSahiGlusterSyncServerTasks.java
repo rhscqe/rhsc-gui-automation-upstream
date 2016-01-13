@@ -53,7 +53,7 @@ public class StorageSahiGlusterSyncServerTasks {
 		storageSahiServerTasks.waitForServerTableToLoad();
 
         // Begin test - Add server
-         
+		storageCLITasks.runGenericCommand(serverToAdd.getServerHostIP(), baseServer.getServerUsername(), baseServer.getServerPassword(), storageCLITasks.commandRunGlusterd); 
 		String command_detach = storageCLITasks.commandGlusterPeerDetach + baseServer.getServerHostIP();
 		String commandOutputDetach = storageCLITasks.runGenericCommand(serverToAdd.getServerHostIP(), baseServer.getServerUsername(), baseServer.getServerPassword(), command_detach);
 		Assert.assertTrue(commandOutputDetach.contains("success"), "Server [" + baseServer.getServerHostIP() + "] detach failed!");
