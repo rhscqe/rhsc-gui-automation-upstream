@@ -146,7 +146,7 @@ public class StorageSahiGlusterSyncServerTasks {
         	return false;
 		}
 		
-		storageCLITasks.runGenericCommand(baseServer.getServerHostIP(), baseServer.getServerUsername(), baseServer.getServerPassword(), storageCLITasks.commandRunGlusterd);
+		storageCLITasks.runGenericCommand(baseServer.getServerHostIP(), baseServer.getServerUsername(), baseServer.getServerPassword(), storageCLITasks.commandRunGlusterd); // Added this line to start glusterd so that cleanup can run
 		return true;
 	}
 	
