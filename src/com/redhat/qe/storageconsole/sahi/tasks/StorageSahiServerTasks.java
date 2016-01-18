@@ -414,6 +414,7 @@ public class StorageSahiServerTasks {
 		}
 
         String serverStatus = GuiTables.getServer(storageSahiTasks, server.getServerName()).get(GuiTables.STATUS);
+        storageSahiTasks._logger.log(Level.INFO, "serverStatus is " + serverStatus);
         if(!serverStatus.equalsIgnoreCase(GuiTables.Status.MAINTENANCE.get())){
             storageSahiTasks._logger.log(Level.WARNING, "Server ["+server.getServerName()+"] not in " + GuiTables.Status.MAINTENANCE.get() + "!");
             return false;
