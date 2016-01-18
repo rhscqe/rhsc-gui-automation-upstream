@@ -390,8 +390,6 @@ public class GuiTables {
 			}
 			if((row != null) && row.get(referenceKey).equals(expectedValue)){
 				_logger.log(Level.FINE, "Success: Expected result["+expectedValue+"] for the reference Key["+referenceKey+"] from the row["+rowReference+"]!");
-				_logger.log(Level.INFO,"row is" + row);
-				
 				return row;
 			}else {
 				storageTasks.waitFor(waitTime);
