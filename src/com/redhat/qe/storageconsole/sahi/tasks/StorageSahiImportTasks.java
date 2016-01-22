@@ -491,8 +491,8 @@ public class StorageSahiImportTasks {
 		
 		commandOutput = commandOutput.substring(commandOutput.indexOf("stdout:"));
 		storageSahiTasks._logger.log(Level.INFO, "Version of OS is" + System.getProperty("os.version"));
-		fingerprint = commandOutput.substring(commandOutput.indexOf(' '), commandOutput.lastIndexOf(" /")); // To extract fingerprint for RHEL6 nodes
-		//fingerprint = commandOutput.substring(commandOutput.indexOf(' '), commandOutput.lastIndexOf(" ")); // To extract fingerprint for RHEL7 nodes
+		//fingerprint = commandOutput.substring(commandOutput.indexOf(' '), commandOutput.lastIndexOf(" /")); // To extract fingerprint for RHEL6 nodes
+		fingerprint = commandOutput.substring(commandOutput.indexOf(' '), commandOutput.lastIndexOf(" ")); // To extract fingerprint for RHEL7 nodes
 		return fingerprint.trim();
 	}
 	
